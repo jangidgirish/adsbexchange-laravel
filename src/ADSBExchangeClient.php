@@ -13,14 +13,13 @@ class ADSBExchangeClient
         $this->http = $http;
     }
 
-    public function hax(string $hex)
+    public function hax(string|array $hex) : array
     {
-        return $this->http->get("/hex/{$hex}")->json();
-    }
-
-    public function positions(string $hex, array $params = [])
-    {
-        return $this->http->get("/aircraft/{$hex}/positions", $params)->json();
+        if(is_string($hex)){
+            return $this->http->get("/hex/{$hex}")->json();
+        }else{
+            return $this->http->post('/hex', ['hex_list' => array_values($hex)])->json();
+        }
     }
 
     public function search(array $params = [])
