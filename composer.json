@@ -1,0 +1,41 @@
+{
+    "name": "jangidgirish/adsbexchange-laravel",
+    "description": "Laravel HTTP client package for ADSBexchange Aircraft API",
+    "type": "library",
+    "license": "MIT",
+    "keywords" : [
+        "ADS-B Exchange",
+        "ADSBExchange"
+    ],
+    "authors" : [
+        {
+            "name" : "Girish Jangid",
+            "email" : "jangid_girish@yahoo.co.in",
+            "homepage" : "https://github.com/jangidgirish",
+            "role" : "Developer"
+        }
+    ],
+    "autoload": {
+      "psr-4": {
+        "JangidGirish\\ADSBExchange\\": "src/"
+      }
+    },
+    "extra": {
+      "laravel": {
+        "providers": [
+          "JangidGirish\\ADSBExchange\\ADSBExchangeServiceProvider"
+        ],
+        "aliases": {
+          "ADSBExchange": "JangidGirish\\ADSBExchange\\Facades\\ADSBExchange"
+        }
+      }
+    },
+    "require": {
+      "php": ">=8.1",
+      "illuminate/support": "^10.0|^11.0",
+      "guzzlehttp/guzzle": "^7.8"
+    },
+    "minimum-stability" : "dev",
+    "prefer-stable" : true
+}
+
