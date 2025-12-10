@@ -13,9 +13,9 @@ class ADSBExchangeClient
         $this->http = $http;
     }
 
-    public function aircraft(string $hex)
+    public function hax(string $hex)
     {
-        return $this->http->get("/aircraft/{$hex}")->json();
+        return $this->http->get("/hex/{$hex}")->json();
     }
 
     public function positions(string $hex, array $params = [])
