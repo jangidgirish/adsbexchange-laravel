@@ -28,4 +28,3 @@ class ADSBExchangeClient
         return $this->http->get("/search", $params)->json();
     }
 }
-

@@ -8,7 +8,6 @@ class ADSBExchange extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return 'adsbexchange';
+        return 'adsbexchange.client';
     }
 }
-
