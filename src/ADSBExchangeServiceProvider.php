@@ -16,6 +16,7 @@ class ADSBExchangeServiceProvider extends ServiceProvider
         $this->app->singleton('adsbexchange.http', function () {
             return Http::withHeaders([
                 'Accept' => 'application/json',
+                'Accept-Encoding' => 'gzip',
                 'x-api-key' => config('adsbexchange.api_key'),
             ])->baseUrl(config('adsbexchange.base_url'));
         });
